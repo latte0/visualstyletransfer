@@ -23,4 +23,27 @@ class MaskedImage:
                 vj, vk = 0, 0
                 if j < 11: vj = base[j]
                 if k < 11: vk = base[k]
-                G_globalSimilarity[i] = v
+                G_globalSimilarity[i] = vj + (100*t-j)*(vk-vj)
+
+        G_initSim = 1
+
+    def initSimilarity2(self,):
+        i, length = 0, 0
+
+
+    def initMaskedImage(self, mask):
+
+        MaskedImage mIm = MasekdImage()
+
+        mIm.mask = mask
+        mIm.image = image
+
+        initSimilarity()
+        mIm.similarity = G_globalSimilarity
+
+        mIm.isNew = 0
+
+        return mIm
+
+    def getSampleMaskedImage(x, y, band):
+        return data[x*step+y]
